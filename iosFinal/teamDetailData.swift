@@ -56,23 +56,23 @@ struct coach:Codable{
 
 struct player:Codable{
     var id:String
-    var status:String
+    var status:String?
      var full_name:String
      var first_name:String
      var last_name:String
-    var abbr_name:String
+    var abbr_name:String?
     var height:Int
     var weight:Int
-    var position:String
-    var primary_position:String
+    var position:String?
+    var primary_position:String?
     var jersey_number:String
-    var experience:String
+    var experience:String?
     var college:String?
     var high_school:String?
-    var birth_place:String
-    var birthdate:String
-    var updated:String
-    var draft:draft
+    var birth_place:String?
+    var birthdate:String?
+    var updated:String?
+    var draft:draft?
 }
 
 struct draft:Codable{
