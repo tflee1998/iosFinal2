@@ -22,6 +22,7 @@
 		5723791E23B4ADD5006EC4A0 /* TeamDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723791D23B4ADD5006EC4A0 /* TeamDetail.swift */; };
 		5723792023B4AFC8006EC4A0 /* teamDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723791F23B4AFC8006EC4A0 /* teamDetailData.swift */; };
 		5723792223B4CAE7006EC4A0 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723792123B4CAE7006EC4A0 /* Rank.swift */; };
+		579A179323B5F9450007B88D /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579A179223B5F9450007B88D /* imagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5723791D23B4ADD5006EC4A0 /* TeamDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetail.swift; sourceTree = "<group>"; };
 		5723791F23B4AFC8006EC4A0 /* teamDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamDetailData.swift; sourceTree = "<group>"; };
 		5723792123B4CAE7006EC4A0 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		579A179223B5F9450007B88D /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = imagePicker.swift; path = ../imagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				5723792123B4CAE7006EC4A0 /* Rank.swift */,
 				5723791923B4AA8A006EC4A0 /* WesternView.swift */,
 				5723791723B4A491006EC4A0 /* TeamRow.swift */,
+				579A179223B5F9450007B88D /* imagePicker.swift */,
 				457D96B423B31B0D001D885D /* ImagePicker.swift */,
 				457D96B223B3112D001D885D /* basketballAnime.swift */,
 				43420EAF23B2332000424568 /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 				5723791823B4A491006EC4A0 /* TeamRow.swift in Sources */,
 				457D96B523B31B0D001D885D /* ImagePicker.swift in Sources */,
 				5723791C23B4AB39006EC4A0 /* EasternView.swift in Sources */,
+				579A179323B5F9450007B88D /* imagePicker.swift in Sources */,
 				5723792023B4AFC8006EC4A0 /* teamDetailData.swift in Sources */,
 				43420EBE23B233A900424568 /* teamData.swift in Sources */,
 				5723792223B4CAE7006EC4A0 /* Rank.swift in Sources */,

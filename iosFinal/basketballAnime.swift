@@ -17,26 +17,29 @@ struct basketballAnime: View {
     
     
     var body: some View {
-        Image(img[make])
-            .resizable()
-            .frame(width: 500, height: 400)
-            .scaleEffect(half ? 1.0 : 0.5)
-            .opacity(dim ? 1.0 : 0.6)
-            .animation(.easeInOut(duration: 1.0))
-            .onTapGesture {
-                self.dim.toggle()
-                self.half.toggle()
-                self.showIn.toggle()
-                if self.showIn==true{
-                    self.make=1
-                }
-                else
-                {
-                    self.make=0
-                }
-        }
         
-    }
+        VStack{
+            Image(img[make])
+                .resizable()
+                .frame(width: 500, height: 400)
+                .scaleEffect(half ? 1.0 : 0.5)
+                .opacity(dim ? 1.0 : 0.6)
+                .animation(.easeInOut(duration: 1.0))
+                .onTapGesture {
+                    self.dim.toggle()
+                    self.half.toggle()
+                    self.showIn.toggle()
+                    if self.showIn==true{
+                        self.make=1
+                    }
+                    else
+                    {
+                        self.make=0
+                    }
+            }
+            
+            
+        }}
     
 }
 

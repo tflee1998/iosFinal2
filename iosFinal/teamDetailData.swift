@@ -65,7 +65,7 @@ struct player:Codable{
     var weight:Int
     var position:String?
     var primary_position:String?
-    var jersey_number:String
+    var jersey_number:String?
     var experience:String?
     var college:String?
     var high_school:String?

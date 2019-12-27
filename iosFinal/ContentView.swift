@@ -10,7 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("yolo")
+      TabView{
+            Rank()
+                .tabItem{
+                    Image(systemName: "cloud.fill")
+                    Text("Rank")
+            }
+            
+            imagePicker()
+                .tabItem{
+                    Image(systemName: "house.fill")
+                    Text("Home")
+            }
+            
+        }
     }
     
 }

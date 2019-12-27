@@ -34,7 +34,7 @@ struct Rank: View {
                         .shadow(radius: 40)
                     }
                 }
-            }
+            }.navigationBarTitle("Conferences")
         }
     }
 }
