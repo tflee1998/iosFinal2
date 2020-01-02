@@ -17,7 +17,7 @@ struct ContentView: View {
                     Text("Rank")
             }
             
-            imagePicker()
+            picker()
                 .tabItem{
                     Image(systemName: "house.fill")
                     Text("Home")

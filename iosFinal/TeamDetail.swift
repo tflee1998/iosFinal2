@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import SafariServices
 struct TeamDetail: View {
     var id:String
     @State var name=""
@@ -19,9 +19,10 @@ struct TeamDetail: View {
     @State var coachesName=""
     @State var coaches=[coach]()
     @State var players=[player]()
+    @State var urlString = URL(string:"")
     func downloadResult(){
         let urlStr="https://api.sportradar.us/nba-t3/zh/teams/"+id+"/profile.json?api_key=ybweczu8fvfb249haydvuu3m"
-        print(urlStr)
+       // print(urlStr)
         if let url = URL(string: urlStr) {
             
             URLSession.shared.dataTask(with: url) { (data,response,error) in
@@ -40,22 +41,38 @@ struct TeamDetail: View {
                     self.founded=teamDetail.founded
                     self.coaches=teamDetail.coaches
                     self.coachesName=self.coaches[0].full_name
-                    print("-------------------")
-                    print(self.coaches[0].full_name)
+                   // print("-------------------")
+                  //  print(self.coaches[0].full_name)
                     self.players=teamDetail.players
-                    print(self.players)
+                   // print(self.players)
+                   
                 }
             }.resume()
             
         }
     }
+    @State var showSafari = false
+   
     var body: some View {
+        
         VStack(alignment:.leading){
             Image(self.name).resizable().frame(width: 300, height: 300)
                 .clipShape(Rectangle())
                 .overlay(Rectangle().stroke(Color.yellow ,lineWidth:4))
                 .shadow(radius: 40)
-            Group{  Text("球隊名稱:\(self.name)")
+            Button(action: {
+                self.showSafari = true
+            }) {
+                
+                Text("比賽Highlight")
+            }
+                
+            .sheet(isPresented: $showSafari) {
+               
+                safariView(name:self.name)
+            }
+            Group{
+                Text("球隊名稱:\(self.name)")
                 Text("\(self.market)")
                 Text("創立於:\(self.founded)")
                 Text("教練:\(self.coachesName)")
@@ -79,3 +96,5 @@ struct TeamDetail_Previews: PreviewProvider {
         TeamDetail(id: "583ecae2-fb46-11e1-82cb-f4ce4684ea4c")
     }
 }
+
+

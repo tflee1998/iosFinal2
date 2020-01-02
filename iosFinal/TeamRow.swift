@@ -11,6 +11,7 @@ import SwiftUI
 struct TeamRow: View {
     
     var team:teams
+    @State var showSafari = false
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.blue,Color.yellow,Color.red]), startPoint: UnitPoint(x:0,y:0), endPoint: UnitPoint(x:1,y:1))
@@ -24,14 +25,16 @@ struct TeamRow: View {
                     .frame(width: 100, height: 100)
                     Text(team.name)
                     Text(team.market)
-                }
-                Spacer()
+                   
+                Spacer()     
                 VStack{
                     Text("Conference rank:\(team.rank.conference)")
                     Text("Division rank:\(team.rank.division)")
+                    
                 }
             }
         }
+}
 }
 }
 
