@@ -12,33 +12,65 @@ struct picker: View {
     
     @State var isShowingImagePicker=false
     @State var imageChoose=UIImage()
+    @State var name=""
+    @State var position="位置"
     var body: some View {
-       
+        
         VStack {
             HStack{
-                AnimationsView(name:"basketball").frame(width:100, height:100)
-                Image(uiImage: imageChoose)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 200, height: 200)
-                    .border(Color.black,width:1)
-                    .clipped()
-                Button(action:{
-                    self.isShowingImagePicker.toggle()
-                },label: {
-                    Text("選照片")
-                        .font(.system(size:32))
-                })
-                .sheet(isPresented: $isShowingImagePicker, content: {
-                    ImagePickerView(isPresented: self.$isShowingImagePicker,selectedImage: self.$imageChoose)
-                })
+                VStack{
+                    Image(uiImage: imageChoose)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 200)
+                        .border(Color.black,width:1)
+                        .clipped()
+                    Button(action:{
+                        self.isShowingImagePicker.toggle()
+                    },label: {
+                        Text("選照片")
+                            .font(.system(size:32))
+                    })
+                        .sheet(isPresented: $isShowingImagePicker, content: {
+                            ImagePickerView(isPresented: self.$isShowingImagePicker,selectedImage: self.$imageChoose)
+                        })
+                }
+                AnimationsView(name:"basketball").frame(width:100, height:350)
+                
+                
+            }
+            Form{
+                TextField("名字", text: $name)
+                Text("\(position)").contextMenu{
+                    Button(action: {
+                        self.position="中鋒"
+                    }) {
+                    Text("中鋒")
+                     Image(systemName: "heart").imageScale(.small)
+                    }
+                    Button(action: {
+                   self.position="前鋒"
+                    }) {
+                    Text("前鋒")
+                    Image(systemName: "heart").imageScale(.small)
+
+                    }
+                    Button(action: {
+                    self.position="控衛"
+
+                     }) {
+                     Text("控衛")
+                     Image(systemName: "heart").imageScale(.small)
+
+                     }
+                }
             }
             
         }
-}
+    }
 }
 struct ImagePickerView:UIViewControllerRepresentable {
-
+    
     @Binding var isPresented:Bool
     @Binding var selectedImage:UIImage
     

@@ -16,7 +16,6 @@ struct TeamRow: View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.blue,Color.yellow,Color.red]), startPoint: UnitPoint(x:0,y:0), endPoint: UnitPoint(x:1,y:1))
             HStack{
-                
                 VStack(alignment: .leading) {
                     Image(team.name).resizable()
                     .clipShape(Circle())
@@ -25,14 +24,14 @@ struct TeamRow: View {
                     .frame(width: 100, height: 100)
                     Text(team.name)
                     Text(team.market)
-                   
+                }
                 Spacer()     
                 VStack{
                     Text("Conference rank:\(team.rank.conference)")
                     Text("Division rank:\(team.rank.division)")
                     
                 }
-            }
+            
         }
 }
 }
