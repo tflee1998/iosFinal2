@@ -7,32 +7,34 @@
 //
 
 import SwiftUI
-
+import Lottie
 struct picker: View {
     
     @State var isShowingImagePicker=false
     @State var imageChoose=UIImage()
-    
     var body: some View {
        
-        VStack{
+        VStack {
+            HStack{
+                AnimationsView(name:"basketball").frame(width:100, height:100)
+                Image(uiImage: imageChoose)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 200, height: 200)
+                    .border(Color.black,width:1)
+                    .clipped()
+                Button(action:{
+                    self.isShowingImagePicker.toggle()
+                },label: {
+                    Text("選照片")
+                        .font(.system(size:32))
+                })
+                .sheet(isPresented: $isShowingImagePicker, content: {
+                    ImagePickerView(isPresented: self.$isShowingImagePicker,selectedImage: self.$imageChoose)
+                })
+            }
             
-            Image(uiImage: imageChoose)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 200, height: 200)
-                .border(Color.black,width:1)
-                .clipped()
-            Button(action:{
-                self.isShowingImagePicker.toggle()
-            },label: {
-                Text("選照片")
-                    .font(.system(size:32))
-            })
-            .sheet(isPresented: $isShowingImagePicker, content: {
-                ImagePickerView(isPresented: self.$isShowingImagePicker,selectedImage: self.$imageChoose)
-            })
-    }
+        }
 }
 }
 struct ImagePickerView:UIViewControllerRepresentable {

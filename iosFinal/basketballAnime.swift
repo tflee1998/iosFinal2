@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct basketballAnime: View {
     var img=["ball","shootMake"]
