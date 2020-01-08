@@ -46,7 +46,9 @@ struct EasternView: View {
                 NavigationLink(destination:TeamDetail(id:self.Eastern[index].id))
                 {
                     
-                    TeamRow(team: self.Eastern[index])
+                    TeamRow(team: self.Eastern[index]).onAppear{
+                        UITableView.appearance().separatorColor = .clear
+                    }
                 }
             }.navigationBarTitle("Eastern Conference")
             .onAppear {

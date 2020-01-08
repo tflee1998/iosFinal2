@@ -18,6 +18,7 @@ struct picker: View {
         
         VStack {
             HStack{
+                
                 VStack{
                     Image(uiImage: imageChoose)
                         .resizable()
@@ -35,9 +36,9 @@ struct picker: View {
                             ImagePickerView(isPresented: self.$isShowingImagePicker,selectedImage: self.$imageChoose)
                         })
                 }
-                AnimationsView(name:"basketball").frame(width:100, height:350)
                 
                 
+                AnimationsView(name:"basketball").frame(width:200, height:350)
             }
             Form{
                 TextField("名字", text: $name)
@@ -64,7 +65,10 @@ struct picker: View {
 
                      }
                 }
+                
             }
+            AnimationsView(name:"loveapple3").frame(width:300, height:250)
+            
             
         }
     }

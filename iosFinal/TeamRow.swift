@@ -22,18 +22,24 @@ struct TeamRow: View {
                     .overlay(Circle().stroke(Color.black ,lineWidth:4))
                     .shadow(radius: 50)
                     .frame(width: 100, height: 100)
-                    Text(team.name)
-                    Text(team.market)
+                    Text("  \(team.name)")
+                    Text("  \(team.market)")
                 }
                 Spacer()     
-                VStack{
-                    Text("Conference rank:\(team.rank.conference)")
-                    Text("Division rank:\(team.rank.division)")
+                VStack(alignment:.leading){
+                    HStack {
+                        Text("Conference rank:")
+                        Image(systemName: "\(team.rank.conference).circle").imageScale(.large)
+                    }
+                    HStack {
+                        Text("Division rank:")
+                        Image(systemName: "\(team.rank.division).circle.fill").imageScale(.large)
+                    }
                     
                 }
             
         }
-}
+            }.cornerRadius(20).shadow(radius: 5)
 }
 }
 
